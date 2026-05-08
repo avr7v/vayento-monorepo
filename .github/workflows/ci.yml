@@ -1,0 +1,29 @@
+name: Vayento CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Backend install
+        working-directory: backend
+        run: npm ci
+      - name: Prisma validate
+        working-directory: backend
+        run: npx prisma validate
+      - name: Backend build
+        working-directory: backend
+        run: npm run build
+      - name: Frontend install
+        working-directory: frontend
+        run: npm ci
+      - name: Frontend build
+        working-directory: frontend
+        run: npm run build

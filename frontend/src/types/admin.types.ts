@@ -1,0 +1,1 @@
+export interface AdminDashboardSummary { totalUsers: number; totalHosts: number; totalProperties: number; publishedProperties: number; totalBookings: number; successfulPayments: number; grossRevenue: string; }

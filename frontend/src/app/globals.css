@@ -1,0 +1,201 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+
+  --vayento-page: #f5efe4;
+  --vayento-page-soft: #faf6ef;
+  --vayento-cream: #fffaf3;
+  --vayento-cream-2: #f8f1e7;
+  --vayento-sand: #eadfcf;
+  --vayento-border: #dfd1bd;
+  --vayento-text: #1f2328;
+  --vayento-muted: #5f5a53;
+  --vayento-accent: #8a7660;
+  --vayento-dark: #1f2328;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(232, 217, 195, 0.9),
+      transparent 34rem
+    ),
+    linear-gradient(180deg, #faf6ef 0%, #f4ecdf 46%, #efe3d1 100%);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(232, 217, 195, 0.9),
+      transparent 34rem
+    ),
+    linear-gradient(180deg, #faf6ef 0%, #f4ecdf 46%, #efe3d1 100%);
+  color: var(--vayento-text);
+  font-family: Arial, Helvetica, sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+a,
+button,
+input,
+textarea,
+select {
+  transition:
+    color 0.25s ease,
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    opacity 0.25s ease;
+}
+
+/* ---------------------------------------------------
+   Vayento warm luxury theme override
+   --------------------------------------------------- */
+
+/* Pages that currently force white background */
+.min-h-screen.bg-white,
+main.bg-white,
+div.bg-white.min-h-screen,
+.bg-white.min-h-screen {
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(232, 217, 195, 0.9),
+      transparent 34rem
+    ),
+    linear-gradient(180deg, #faf6ef 0%, #f4ecdf 46%, #efe3d1 100%) !important;
+}
+
+/* Keep plain bg-white cards warm instead of cold white */
+.bg-white {
+  background-color: var(--vayento-cream) !important;
+}
+
+/* Header / navigation */
+header,
+nav {
+  background-color: #faf6ef !important;
+  border-color: var(--vayento-border) !important;
+}
+
+/* Main large cards */
+[class*='rounded-[34px]'][class*='bg-white'],
+[class*='rounded-[30px]'][class*='bg-white'],
+[class*='rounded-[28px]'][class*='bg-white'],
+[class*='rounded-[24px]'][class*='bg-white'],
+[class*='rounded-[22px]'][class*='bg-white'],
+[class*='rounded-[20px]'][class*='bg-white'],
+[class*='rounded-[18px]'][class*='bg-white'] {
+  background-color: var(--vayento-cream) !important;
+  border-color: var(--vayento-border) !important;
+}
+
+/* Soft secondary cards */
+.bg-\[\#FCFBF9\],
+.bg-\[\#F8F5EF\],
+.bg-\[\#F7F4EE\] {
+  background-color: var(--vayento-cream-2) !important;
+}
+
+/* Borders */
+.border-\[\#E8DED0\],
+.border-\[\#E7DED1\],
+.border-\[\#E8DED0\]\/80,
+.border-\[\#E7DED1\]\/80 {
+  border-color: var(--vayento-border) !important;
+}
+
+/* Text colors */
+.text-\[\#1F2328\] {
+  color: var(--vayento-text) !important;
+}
+
+.text-\[\#8A7660\] {
+  color: var(--vayento-accent) !important;
+}
+
+.text-\[\#5F5A53\],
+.text-\[\#6F675F\],
+.text-\[\#7A726A\] {
+  color: var(--vayento-muted) !important;
+}
+
+/* Dark luxury buttons */
+.bg-\[\#1F2328\] {
+  background-color: var(--vayento-dark) !important;
+}
+
+/* Inputs / textareas / selects */
+input,
+textarea,
+select {
+  background-color: #fffaf3 !important;
+  border-color: var(--vayento-border) !important;
+  color: var(--vayento-text);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #9a8b7a;
+}
+
+/* Focus states */
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #c9a46a !important;
+  box-shadow: 0 0 0 3px rgba(201, 164, 106, 0.16);
+}
+
+/* Footer */
+footer {
+  background-color: #efe3d1 !important;
+  border-color: var(--vayento-border) !important;
+}
+
+/* Better selection color */
+::selection {
+  background-color: #d8c5aa;
+  color: #1f2328;
+}
+
+/* Scrollbar, optional but matches theme */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f4ecdf;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cdb89c;
+  border-radius: 999px;
+  border: 3px solid #f4ecdf;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b89f80;
+}
